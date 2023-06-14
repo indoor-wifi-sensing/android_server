@@ -24,7 +24,7 @@ def handle_request():
 
     pred = 0
     count_num = 0
-    while (count_num < 5):
+    while (count_num < 3):
         i = 0
         if pred == 1:
             break
@@ -157,8 +157,8 @@ def handle_request():
         pred = y_pred_new
         count_num += 1
 
-    # if (pred == [0]):
-    #     disPos[min_index] = 'cannot find your position'
+    if (min_distance > 53):
+        disPos[min_index] = 'cannot find your position'
 
     # 요청 데이터 처리 및 응답 생성
     response = {'message': 'Hello, Android!', 'received_data': disPos[min_index]}
